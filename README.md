@@ -58,7 +58,9 @@ The following are also achieved in this project:
 ## How to update list of Public Holidays
 
 The list of public holiday have to be updated in `src/config/public_holiday.py` whenever Ministry of Manpower updated the dates for public holidays in Singapore.
+
 This is because the program refers to this file to determine if the current date is a public holiday or not.
+
 [List of Public Holidays](https://www.mom.gov.sg/employment-practices/public-holidays)
 
 # Credits
