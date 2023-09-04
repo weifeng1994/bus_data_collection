@@ -34,6 +34,5 @@ def prepare_directus(collection, directus_url=config.DIRECTUS_URL, directus_head
 
 
 if __name__ == "__main__":
-    print(config.DIRECTUS_HEADER)
     prepare_directus("buses")
     prepare_directus("bus_eve")
