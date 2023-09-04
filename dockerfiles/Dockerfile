@@ -21,6 +21,8 @@ RUN chmod +x startup.sh
 COPY bus.sh .
 RUN chmod +x bus.sh
 
+COPY .env .
+
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
