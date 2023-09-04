@@ -1,0 +1,1 @@
+python -m src.utils.prepare_directus && cron -f

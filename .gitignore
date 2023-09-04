@@ -1,0 +1,11 @@
+database/*
+!database/.gitkeep
+__pycache__
+
+logs/*
+!logs/.gitkeep
+
+uploads/*
+!uploads/.gitkeep
+
+.env

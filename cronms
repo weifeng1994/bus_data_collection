@@ -1,0 +1,1 @@
+* 0-2,10-23 * * * cd /app; sh bus.sh 1>/app/logs/cron.log 2>&1

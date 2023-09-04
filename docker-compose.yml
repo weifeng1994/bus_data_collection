@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - 8055:8055
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./database:/directus/database
+    restart: always
+    env_file:
+      - .env
+    environment:
+      KEY: ${KEY}
+      SECRET: ${SECRET}
+
+      DB_CLIENT: 'sqlite3'
+      DB_FILENAME: '/directus/database/bus.db'
+
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+
+  app:
+    build: 
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    depends_on:
+      - directus
+    
