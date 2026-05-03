@@ -1,6 +1,6 @@
 FROM python:3.10
 
-ENV TZ=Singapore
+ENV TZ=Asia/Singapore
 
 # Place timezone data /etc/timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone

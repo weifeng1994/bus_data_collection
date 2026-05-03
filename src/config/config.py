@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = "http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2"
+URL = os.getenv("URL")
 
 ACCOUNT_KEY = os.getenv("ACCOUNT_KEY")
 HEADERS = {
@@ -12,7 +12,7 @@ HEADERS = {
 
 
 DIRECTUS_URL = "http://directus:8055"
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("ADMIN_TOKEN")
 DIRECTUS_HEADER = {
     "Authorization": f"Bearer {TOKEN}",
     'Content-Type': 'application/json'
