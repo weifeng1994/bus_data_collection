@@ -1,4 +1,5 @@
 import os
+import requests
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,9 +11,14 @@ HEADERS = {
     "AccountKey": ACCOUNT_KEY 
 }
 
+DIRECTUS_URL = os.getenv("DIRECTUS_URL")
+res = requests.post(f"{DIRECTUS_URL}/auth/login", json={
+        "email": os.getenv("ADMIN_EMAIL"),
+        "password": os.getenv("ADMIN_PASSWORD")
+    })
+TOKEN = res.json()["data"]["access_token"]
 
-DIRECTUS_URL = "http://directus:8055"
-TOKEN = os.getenv("ADMIN_TOKEN")
+# TOKEN = os.getenv("ADMIN_TOKEN")
 DIRECTUS_HEADER = {
     "Authorization": f"Bearer {TOKEN}",
     'Content-Type': 'application/json'
